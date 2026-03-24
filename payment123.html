@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAYMENT ARZ HOSTING🤩🤩🤩</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: auto;
+    }
+    
+    body {
+      background: url('https://files.catbox.moe/z9lson.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2em;
+      text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+    
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin: 0 auto 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    
+    .btn {
+      background: #000000;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      margin: 8px auto;
+      font-size: 0.9em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.3);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: 1px;
+      width: 90%;
+      max-width: 250px;
+      display: block;
+    }
+    
+    .btn:hover {
+      background: #4169e1;
+      transform: scale(1.02);
+    }
+    
+    .btn-whatsapp {
+      background: #25D366;
+    }
+    
+    .btn-whatsapp:hover {
+      background: #128C7E;
+    }
+    
+    .btn-channel {
+      background: #075E54;
+    }
+    
+    .btn-channel:hover {
+      background: #054D44;
+    }
+    
+    .btn-music {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 8px;
+      font-size: 1em;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10002;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    
+    .btn-music:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+    
+    .btn-music i {
+      font-size: 1.2em;
+    }
+    
+    #output-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    
+    #output {
+      font-size: 1.5em;
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      max-width: 90%;
+    }
+    
+    img {
+      max-width: 280px;
+      width: 100%;
+      margin: 15px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    
+    .typing {
+      border-right: .15em solid white;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2s steps(30, end) forwards, blink-caret .75s step-end infinite;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: white; }
+    }
+    
+    .close-btn {
+      margin-top: 20px;
+      background: #e53935;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    footer {
+      margin-top: auto;
+      padding: 10px;
+      font-size: 0.7em;
+      color: #bbb;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    
+    #welcome-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      transition: opacity 0.5s;
+    }
+    
+    #welcome-content {
+      animation: fadeIn 1.5s;
+      width: 90%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    
+    .welcome-title {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px #ffffff;
+    }
+    
+    .welcome-subtitle {
+      font-size: 1em;
+      margin-bottom: 30px;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    
+    #payment-page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    
+    .payment-title {
+      margin-bottom: 25px;
+      font-size: 1.5em;
+      padding: 0 15px;
+    }
+    
+    .thank-you {
+      font-size: 1.2em;
+      margin: 15px 0;
+      font-family: 'Share Tech Mono', monospace;
+      color: #ffffff;
+      text-shadow: 0 0 5px white;
+      display: none;
+      padding: 0 15px;
+    }
+    
+    .copy-notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-family: 'Share Tech Mono', monospace;
+      display: none;
+      z-index: 10001;
+      font-size: 0.9em;
+      max-width: 90%;
+    }
+    
+    .whatsapp-section {
+      margin: 20px 0;
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      width: 90%;
+      max-width: 400px;
+    }
+    
+    .whatsapp-buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .whatsapp-buttons .btn {
+      flex: 1;
+      margin: 0;
+      padding: 10px 5px;
+      font-size: 0.8em;
+    }
+    
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 10px;
+      color: #ffffff;
+      font-size: 1em;
+    }
+
+    @media (min-width: 768px) {
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .btn {
+        padding: 15px 25px;
+        font-size: 1em;
+        max-width: 280px;
+      }
+      
+      .btn-music {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2em;
+      }
+      
+      .payment-title {
+        font-size: 1.8em;
+      }
+      
+      .welcome-title {
+        font-size: 2.2em;
+      }
+      
+      .whatsapp-buttons .btn {
+        padding: 12px 5px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  
+  <audio id="bg-music" loop>
+    <source src="ganti musik" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button class="btn-music" id="music-toggle" onclick="toggleMusic()">
+    <i class="fas fa-volume-up" id="music-icon"></i>
+  </button>
+
+  <div class="copy-notification" id="copy-notification">Nomor berhasil disalin!</div>
+
+  <div id="welcome-page">
+    <div id="welcome-content">
+      <img src="" alt="Logo" class="logo">
+      <h1 class="welcome-title">SELAMAT DATANG</h1>
+      <p class="welcome-subtitle">DI PAYMENT ARZ HOSTING 🤩</p>
+      <button class="btn" onclick="enterPaymentPage()">MASUK KE PAYMENT</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="payment-page">
+      <img src="https://files.catbox.moe/z9lson.jpgi" alt="Logo" class="logo">
+      <h1 class="payment-title"></h1>
+      <button class="btn" onclick="copyToClipboard('ganti pake no dana lu', 'DANA')">087728772377</button> 
+      <button class="btn" onclick="copyToClipboard('ganti pake no gopay lu', 'GOPAY')">NOMOR GOPAY</button>
+      <button class="btn" onclick="copyToClipboard('ganti pake no ovo lu', 'OVO')">NOMOR OVO</button>
+      <button class="btn" onclick="showQRIS()">QRIS</button>
+      
+      <div class="whatsapp-section">
+        <h3 class="section-title">HUBUNGI KAMI VIA WHATSAPP</h3>
+        <div class="whatsapp-buttons">
+          <button class="btn btn-whatsapp" onclick="openWhatsApp('6287744566732')">CHAT WA</button>
+          <button class="btn btn-channel" onclick="openWhatsAppChannel()">SALURAN WA</button>
+        </div>
+      </div>
+      
+      <div class="thank-you" id="thank-you">TERIMAKASIH TELAH BERTRANSAKSI DENGAN ubah aja bebas</div>
+    </div>
+  </div>
+
+  <div id="output-wrapper">
+    <div id="output"></div>
+    <button class="close-btn" onclick="closeOutput()">TUTUP</button>
+  </div>
+  
+  <footer>© Copyright ubah</footer>  
+  
+  <script>
+    function enterPaymentPage() {
+      const welcomePage = document.getElementById("welcome-page");
+      const paymentPage = document.getElementById("payment-page");
+      
+      welcomePage.style.opacity = "0";
+      
+      setTimeout(() => {
+        welcomePage.style.display = "none";
+        paymentPage.style.display = "flex";
+      }, 500);
+      
+      const music = document.getElementById("bg-music");
+      music.play().catch(() => {});
+    }
+
+    function copyToClipboard(text, paymentMethod) {
+      navigator.clipboard.writeText(text).then(() => {
+        const notification = document.getElementById("copy-notification");
+        notification.textContent = `Nomor ${paymentMethod} berhasil disalin!`;
+        notification.style.display = "block";
+        
+        setTimeout(() => {
+          notification.style.display = "none";
+        }, 2000);
+        
+        const thankYou = document.getElementById("thank-you");
+        thankYou.style.display = "block";
+        
+        const wrapper = document.getElementById("output-wrapper");
+        const output = document.getElementById("output");
+        wrapper.style.display = "flex";
+        output.innerHTML = `<div class='typing'>${paymentMethod}: ${text}</div>`;
+        
+      }).catch(err => {
+        console.error('Gagal menyalin teks: ', err);
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          
+          const notification = document.getElementById("copy-notification");
+          notification.textContent = `Nomor ${paymentMethod} berhasil disalin!`;
+          notification.style.display = "block";
+          
+          setTimeout(() => {
+            notification.style.display = "none";
+          }, 2000);
+          
+          const thankYou = document.getElementById("thank-you");
+          thankYou.style.display = "block";
+          
+          const wrapper = document.getElementById("output-wrapper");
+          const output = document.getElementById("output");
+          wrapper.style.display = "flex";
+          output.innerHTML = `<div class='typing'>${paymentMethod}: ${text}</div>`;
+          
+        } catch (err) {
+          console.error('Fallback copy method failed: ', err);
+        }
+        document.body.removeChild(textArea);
+      });
+    }
+
+    function showQRIS() {
+      const wrapper = document.getElementById("output-wrapper");
+      const output = document.getElementById("output");
+      wrapper.style.display = "flex";
+      output.innerHTML = `<img src='https://files.catbox.moe/z9lson.jpg' alt='QRIS'>`;
+      
+      const thankYou = document.getElementById("thank-you");
+      thankYou.style.display = "block";
+    }
+
+    function closeOutput() {
+      document.getElementById("output-wrapper").style.display = "none";
+      document.getElementById("thank-you").style.display = "none";
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      const musicIcon = document.getElementById("music-icon");
+      
+      if (music.paused || music.muted) {
+        music.play().catch(() => {});
+        music.muted = false;
+        musicIcon.className = "fas fa-volume-up";
+      } else {
+        music.pause();
+        music.muted = true;
+        musicIcon.className = "fas fa-volume-mute";
+      }
+    }
+    
+    function openWhatsApp(number) {
+      window.open(`https://wa.me/${number}`, '_blank');
+      
+      const thankYou = document.getElementById("thank-you");
+      thankYou.style.display = "block";
+      
+      const notification = document.getElementById("copy-notification");
+      notification.textContent = `Membuka WhatsApp ke nomor ${number}`;
+      notification.style.display = "block";
+      
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 2000);
+    }
+    
+    function openWhatsAppChannel() {
+      window.open('ubah pake link ch lu', '_blank');
+      
+      const thankYou = document.getElementById("thank-you");
+      thankYou.style.display = "block";
+      
+      const notification = document.getElementById("copy-notification");
+      notification.textContent = 'Membuka Saluran WhatsApp';
+      notification.style.display = "block";
+      
+      setTimeout(() => {
+        notification.style.display = "none";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
